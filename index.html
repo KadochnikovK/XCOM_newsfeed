@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- News Feed Component -->
+    <div class="news-feed">
+        <!-- Filter Block -->
+        <div class="news-filter">
+            <div class="filter__date-section">
+                <div class="date-picker">
+                    <input type="date" class="form__input date-input" placeholder="Начало">
+                    <span class="divider"></span>
+                    <input type="date" class="form__input date-input" placeholder="Окончание">
+                </div>
+                <div class="date-quick-buttons">
+                    <button class="button button--outline date-quick-btn active">Сегодня</button>
+                    <button class="button button--outline date-quick-btn">Неделя</button>
+                    <button class="button button--outline date-quick-btn">Месяц</button>
+                    <button class="button button--outline date-quick-btn">Все</button>
+                </div>
+            </div>
+
+            <div class="filter__sort-section">
+                <select class="form__input sort-select">
+                    <option value="popular">Популярные</option>
+                    <option value="unpopular">Не популярные</option>
+                    <option value="new">Новые</option>
+                    <option value="old">Старые</option>
+                </select>
+
+                <button class="button filter-modal-btn" onclick="openFilterModal()">
+                    <i class="fas fa-filter"></i>
+                    Фильтр
+                </button>
+            </div>
+        </div>
+
+        <!-- News Grid -->
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="news-card__image">
+                    <img src="assets/images/news-1.png" alt="Новость">
+                    <div class="news-card__category category--conference">
+                        <img class="news-card__category-icon" src="assets/images/icon_conf.svg" alt="">
+                        Конференция
+                    </div>
+                    <div class="news-card__status status--active">
+                        Активен
+                    </div>
+                </div>
+
+                <div class="news-card__content">
+                    <div class="news-card__meta">
+                        <span class="news-card__date">27.11.2024</span>
+                        <div class="news-card__stats">
+                            <span class="stat">
+                                <i class="fas fa-eye"></i>
+                                1.2K
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-comment"></i>
+                                45
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="news-card__title">X-Com Connect: Итоги конференции</h3>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card__image">
+                    <img src="assets/images/news-2.jpg" alt="Новость">
+                    <div class="news-card__category category--webinar">
+                        <img class="news-card__category-icon" src="assets/images/icon_web.svg" alt="">
+                        Вебинар
+                    </div>
+                    <div class="news-card__status status--completed">
+                        Завершен
+                    </div>
+                </div>
+
+                <div class="news-card__content">
+                    <div class="news-card__meta">
+                        <span class="news-card__date">15.11.2024</span>
+                        <div class="news-card__stats">
+                            <span class="stat">
+                                <i class="fas fa-eye"></i>
+                                856
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-comment"></i>
+                                23
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="news-card__title">Новые технологии в образовании</h3>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-card__image">
+                    <img src="assets/images/news-3.jpg" alt="Новость">
+                    <div class="news-card__category category--lotery">
+                        <img class="news-card__category-icon" src="assets/images/icon_lotery.svg" alt="">
+                        Розыгрыш
+                    </div>
+                    <div class="news-card__status status--active">
+                        Активен
+                    </div>
+                </div>
+
+                <div class="news-card__content">
+                    <div class="news-card__meta">
+                        <span class="news-card__date">10.11.2024</span>
+                        <div class="news-card__stats">
+                            <span class="stat">
+                                <i class="fas fa-eye"></i>
+                                2.1K
+                            </span>
+                            <span class="stat">
+                                <i class="fas fa-comment"></i>
+                                167
+                            </span>
+                        </div>
+                    </div>
+                    <h3 class="news-card__title">Выиграйте технику X-Com</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Version -->
+        <div class="news-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- Same news cards but in swiper slides -->
+                <div class="swiper-slide">
+                    <div class="news-card">
+                        <!-- Card content same as above -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal filter-modal animate__animated" style="display: none">
+        <div class="modal__window animate__animated">
+            <div class="modal__close" onclick="closeFilterModal()">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="modal__content">
+                <p class="modal__headline">Фильтр новостей</p>
+                <div class="filter-options">
+                    <div class="form__item">
+                        <label class="form__checkbox-label">Статус:</label>
+                        <select class="form__input">
+                            <option value="all">Все</option>
+                            <option value="active">Активные</option>
+                            <option value="completed">Завершенные</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="modal__button button" onclick="applyFilters()">
+                    Применить фильтры
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

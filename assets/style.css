@@ -1,0 +1,339 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-ExtraBold.ttf") format("truetype"), url("fonts/Manrope-ExtraBold.woff") format("woff"), url("fonts/Manrope-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Bold.ttf") format("truetype"), url("fonts/Manrope-Bold.woff") format("woff"), url("fonts/Manrope-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Semibold.ttf") format("truetype"), url("fonts/Manrope-Semibold.woff") format("woff"), url("fonts/Manrope-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Medium.ttf") format("truetype"), url("fonts/Manrope-Medium.woff") format("woff"), url("fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Regular.ttf") format("truetype"), url("fonts/Manrope-Regular.woff") format("woff"), url("fonts/Manrope-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Light.ttf") format("truetype"), url("fonts/Manrope-Light.woff") format("woff"), url("fonts/Manrope-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Thin.ttf") format("truetype"), url("fonts/Manrope-Thin.woff") format("woff"), url("fonts/Manrope-Thin.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Main";
+  src: url("fonts/Manrope-Medium.ttf") format("truetype"), url("fonts/Manrope-Medium.woff") format("woff"), url("fonts/Manrope-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Second";
+  src: url("fonts/ONDER-REGULAR.ttf") format("truetype"), url("fonts/ONDER-REGULAR.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Font-face подключения в вашем стиле */
+:root {
+  --color-grey: #e4e4e4;
+  --color-bright: #fff;
+  --color-dark: #000;
+  --color-red: #b41313;
+  --size-xxxs: calc((1vw + 1vh) * 0.4);
+  --size-xxs: calc((1vw + 1vh) * 0.6);
+  --size-xs: calc((1vw + 1vh) * 0.8);
+  --size-sm: calc((1vw + 1vh) * 1);
+  --size-md: calc((1vw + 1vh) * 1.2);
+  --size-lg: calc((1vw + 1vh) * 2);
+  --size-xl: calc((1vw + 1vh) * 2.5);
+  --size-xxl: calc((1vw + 1vh) * 5);
+  --size-xxxl: calc((1vw + 1vh) * 10);
+}
+
+* {
+  font-family: Main;
+}
+
+.news-feed {
+  padding: var(--size-sm);
+  color: var(--color-bright);
+}
+.news-feed__header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: var(--size-lg);
+}
+
+.news-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+  margin-bottom: var(--size-lg);
+  padding: var(--size-sm);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--size-sm);
+}
+@media (min-width: 1024px) {
+  .news-filter {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+}
+.news-filter__date-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+}
+@media (min-width: 640px) {
+  .news-filter__date-section {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.news-filter__sort-section {
+  display: flex;
+  gap: var(--size-sm);
+  align-items: center;
+}
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxs);
+}
+.date-picker .date-input {
+  width: 140px;
+  font-size: var(--size-xxs);
+}
+
+.date-quick-buttons {
+  display: flex;
+  gap: var(--size-xxs);
+}
+.date-quick-buttons .date-quick-btn {
+  padding: var(--size-xs) var(--size-sm);
+  font-size: var(--size-xxs);
+}
+.date-quick-buttons .date-quick-btn.active {
+  background: var(--color-main);
+  color: var(--color-bright);
+}
+
+.filter-modal-btn {
+  padding: var(--size-xs) var(--size-sm);
+  font-size: var(--size-xxs);
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxs);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--size-sm);
+}
+@media (min-width: 640px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1224px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.news-card {
+  background: var(--color-bright);
+  border-radius: var(--size-sm);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.news-card__image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.news-card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news-card__image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+.news-card__category {
+  position: absolute;
+  top: var(--size-xxs);
+  left: var(--size-xxs);
+  padding: var(--size-xxxs) var(--size-xs);
+  border-radius: var(--size-xxs);
+  font-size: var(--size-xxs);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxxs);
+}
+.news-card__category.category--conference {
+  background: #4CCC5F;
+}
+.news-card__category.category--webinar {
+  background: #D76D26;
+}
+.news-card__category.category--lotery {
+  background: #A526D7;
+}
+.news-card__category .category-icon {
+  width: var(--size-xxs);
+  height: var(--size-xxs);
+}
+.news-card__category-icon {
+  width: var(--size-sm) !important;
+  height: var(--size-sm) !important;
+}
+.news-card__status {
+  position: absolute;
+  top: var(--size-xxs);
+  right: var(--size-xxs);
+  padding: var(--size-xxxs) var(--size-xs);
+  border-radius: var(--size-xxs);
+  font-size: var(--size-xxs);
+  font-weight: 600;
+}
+.news-card__status.status--active {
+  background: #00a86b;
+}
+.news-card__status.status--completed {
+  background: var(--color-grey);
+  color: var(--color-dark);
+}
+.news-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--size-sm);
+  z-index: 2;
+}
+.news-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--size-xxs);
+  font-size: var(--size-xxs);
+  color: var(--color-bright);
+  opacity: 0.9;
+}
+.news-card__stats {
+  display: flex;
+  gap: var(--size-xs);
+}
+.news-card__stats .stat {
+  display: flex;
+  align-items: center;
+  gap: var(--size-xxxs);
+}
+.news-card__title {
+  font-size: var(--size-sm);
+  color: var(--color-bright);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .news-card__title {
+    font-size: var(--size-xs);
+  }
+}
+
+.news-slider {
+  display: none;
+}
+.news-slider.news-feed--slider .news-slider {
+  display: block;
+}
+.news-slider .swiper-slide {
+  height: auto;
+}
+.news-slider .news-grid {
+  display: none;
+}
+
+.news-feed--slider .news-grid {
+  display: none;
+}
+.news-feed--slider .news-slider {
+  display: block;
+}
+
+.filter-modal .modal__window {
+  max-width: 400px;
+}
+.filter-modal .filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+  width: 100%;
+}
+.filter-modal .filter-options .form__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-xxs);
+}
+.filter-modal .filter-options .form__item label {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.button--outline {
+  background: transparent;
+  border: 2px solid var(--color-main);
+  color: var(--color-main);
+}
+.button--outline:hover {
+  background: var(--color-main);
+  color: var(--color-bright);
+}/*# sourceMappingURL=style.css.map */
