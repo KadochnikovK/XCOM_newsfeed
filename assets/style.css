@@ -62,7 +62,6 @@
   font-style: normal;
   font-display: swap;
 }
-/* Font-face подключения в вашем стиле */
 :root {
   --color-grey: #e4e4e4;
   --color-bright: #fff;
@@ -298,7 +297,6 @@
   gap: var(--size-sm);
 }
 
-/* Material style for inputs and select */
 .md-input,
 .md-select {
   padding: 8px 12px;
@@ -314,7 +312,6 @@
   border-color: #1976d2;
 }
 
-/* Material button */
 .md-button {
   display: flex;
   align-items: center;
@@ -402,7 +399,6 @@
     transform: scale(1);
   }
 }
-/* Material checkbox */
 .md-checkbox {
   display: flex;
   align-items: center;
@@ -440,7 +436,6 @@
           user-select: none;
 }
 
-/* Material button variations */
 .md-button--outlined {
   background: transparent;
   color: #1976d2;
@@ -487,7 +482,6 @@
   box-sizing: border-box;
   transition: all 0.2s ease;
   overflow: hidden;
-  /* ripple внутри квадрата */
 }
 
 .md-checkbox input:checked ~ .box {
@@ -495,7 +489,6 @@
   background-color: var(--accent-color, #007bff);
 }
 
-/* Галочка */
 .md-checkbox .box::after {
   content: "";
   position: absolute;
@@ -515,7 +508,6 @@
   transform: scale(1) rotate(45deg);
 }
 
-/* Ripple эффект */
 .ripple {
   position: absolute;
   top: 50%;
@@ -545,7 +537,6 @@
     opacity: 0;
   }
 }
-/* Hover */
 .md-checkbox:hover .box {
   border-color: var(--accent-color, #007bff);
   background-color: rgba(0, 123, 255, 0.1);

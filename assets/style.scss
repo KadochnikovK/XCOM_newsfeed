@@ -1,4 +1,4 @@
-// sizes
+
 @import "./scss/fonts";
 
 $xs: 480px;
@@ -38,12 +38,12 @@ $xl: 1440px;
     }
 }
 
-/* Font-face подключения в вашем стиле */
+
 
 
 :root {
 
-    // colors
+
 
     --color-grey: #e4e4e4;
     --color-bright: #fff;
@@ -66,7 +66,6 @@ $xl: 1440px;
     font-family: Main;
 }
 
-// _news-feed.scss
 .news-feed {
     padding: var(--size-sm);
 
@@ -101,7 +100,7 @@ $xl: 1440px;
     overflow: hidden;
     position: relative;
     transition: all 0.3s ease-in-out;
-    min-height: 380px; // Минимальная высота
+    min-height: 380px; 
     display: flex;
     flex-direction: column;
 
@@ -113,7 +112,6 @@ $xl: 1440px;
     &__category-icon {
         width: var(--size-xxs) !important;
         height: var(--size-xxs) !important;
-        // Background image will be added via CSS
     }
 
     &__image {
@@ -252,7 +250,7 @@ $xl: 1440px;
     }
 }
 
-// Slider version - FIXED
+
 .news-slider {
     display: none;
     overflow: visible !important;
@@ -314,7 +312,7 @@ $xl: 1440px;
     }
 }
 
-/* Material style for inputs and select */
+
 .md-input,
 .md-select {
     padding: 8px 12px;
@@ -330,7 +328,6 @@ $xl: 1440px;
     }
 }
 
-/* Material button */
 .md-button {
     display: flex;
     align-items: center;
@@ -432,7 +429,6 @@ $xl: 1440px;
     }
 }
 
-/* Material checkbox */
 .md-checkbox {
     display: flex;
     align-items: center;
@@ -470,7 +466,7 @@ $xl: 1440px;
     }
 }
 
-/* Material button variations */
+
 .md-button--outlined {
     background: transparent;
     color: #1976d2;
@@ -517,7 +513,7 @@ $xl: 1440px;
     box-sizing: border-box;
     transition: all 0.2s ease;
     overflow: hidden;
-    /* ripple внутри квадрата */
+  
 }
 
 .md-checkbox input:checked~.box {
@@ -525,7 +521,7 @@ $xl: 1440px;
     background-color: var(--accent-color, #007bff);
 }
 
-/* Галочка */
+
 .md-checkbox .box::after {
     content: "";
     position: absolute;
@@ -545,7 +541,7 @@ $xl: 1440px;
     transform: scale(1) rotate(45deg);
 }
 
-/* Ripple эффект */
+
 .ripple {
     position: absolute;
     top: 50%;
@@ -577,7 +573,7 @@ $xl: 1440px;
     }
 }
 
-/* Hover */
+
 .md-checkbox:hover .box {
     border-color: var(--accent-color, #007bff);
     background-color: rgba(0, 123, 255, 0.1);
